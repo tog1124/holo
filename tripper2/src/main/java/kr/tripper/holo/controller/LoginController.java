@@ -38,6 +38,10 @@ public class LoginController {
 		String move = loginService.signin(email,password);
 		return move;
 	}
+	@RequestMapping(value = "/main", method = RequestMethod.GET)
+	public String main(Locale locale, Model model) {
+		return "main";
+	}
 	
 	@RequestMapping(value = "/signup", method = RequestMethod.POST)
 	public String signup(Locale locale, Model model) {

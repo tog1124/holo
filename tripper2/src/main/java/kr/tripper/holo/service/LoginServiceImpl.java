@@ -18,7 +18,7 @@ import kr.tripper.holo.dao.MemberDAOImpl;
 			String chk = null;
 			String dbpwd = mDaoImpl.signin(email);
 			if(dbpwd.equals(password)) {
-				chk = "main";
+				chk = "redirect:main";
 			}
 			else {chk="redirect:/";}
 			return chk;
