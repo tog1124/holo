@@ -28,6 +28,7 @@ public class MemberDAOImpl implements MemberDAO {
 
 	@Override
 	public boolean rememberid() {
+		
 		return false;
 	}
 

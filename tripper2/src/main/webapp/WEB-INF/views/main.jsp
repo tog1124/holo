@@ -13,7 +13,7 @@
 <meta name="keywords" content="Pixel">
 <meta name="author" content="rkwebdesigns">
 <!-- Site Title   -->
-<title>SOLO Escape</title>
+<title>Tripper</title>
 <!-- Card script -->
 <link rel="stylesheet" type="text/css" href="css/cardstyle.css" />
 <!-- Fav Icons   -->
@@ -235,8 +235,8 @@
 			<div class="row">
 				<div class="col-md-12 col-lg-12">
 					<div class="section-5-box-text-cont wow fadeInUp">
-						<h2>더 많은 사람들 보러가기</h2>
-						<p>더 많은 사람들을 만나보세요. 관심을 먼저 표현한다면, 상대방도 관심을 표현할 것입니다.</p>
+						<h2>더 많은 장소들 보러가기</h2>
+						<p>재미있는곳 보러가기</p>
 						<a href="other.do" class="btn btn-primary">Get Started!</a>
 					</div>
 				</div>
