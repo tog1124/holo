@@ -15,15 +15,8 @@ public class MemberDAOImpl implements MemberDAO {
 	String mapperPath = "member-mapper";
 	
 	@Override
-	public String signin(String email,String password) {
-		String chk = null;
-		String dbpwd = sqlSession.selectOne(mapperPath+".login",email);
-		if(dbpwd.equals(password)) {
-			chk = "main";
-		}
-		else {chk="redirect:/";}
-	
-		return chk;
+	public String signin(String email) {
+		return  sqlSession.selectOne(mapperPath+".login",email);
 	}
 
 	@Override
