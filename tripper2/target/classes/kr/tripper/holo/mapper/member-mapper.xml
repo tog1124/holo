@@ -37,8 +37,8 @@
 	</insert>
 	<!-- 리뷰 수정 -->
 	<update id="up">
-
-	</update>
+		UPDATE review
+	</update>	
 	<!-- 리뷰 삭제 -->
 	<delete id="del">
 
