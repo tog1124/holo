@@ -24,7 +24,7 @@
 		<!-- mapperLocations는 DB에 처리한 mapper xml이 어디에 있는 지정한다. -->
 		<beans:property name="mapperLocations" value="classpath*:kr/tripper/holo/mapper/*mapper.xml" />
 	</beans:bean>
-
+	
 	<beans:bean class="org.mybatis.spring.SqlSessionTemplate">
 		<beans:constructor-arg ref="ssfb" />
 	</beans:bean>
