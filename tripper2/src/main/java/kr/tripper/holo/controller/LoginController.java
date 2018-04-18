@@ -13,8 +13,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-
-import kr.tripper.holo.dao.MemberDAOImpl;
 import kr.tripper.holo.service.LoginService;
 
 /**
