@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/mvc"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:beans="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<context:annotation-config />
+
+	<beans:bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<beans:property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
+		<beans:property name="url" value="jdbc:oracle:thin:@localhost:1521:xe" />
+		<beans:property name="username" value="kim" />
+		<beans:property name="password" value="1234" />
+	</beans:bean>
+
+	<!-- 생성자로 특정 객체를 넣어도 빨간줄이 뜨면, property로 값을 지정해야 하는 경우가 많다. -->
+	<!-- SqlSessionFactoryBean에서는 DB와 MyBatis의 session에 관한 설정을 해준다. -->
+
+	<beans:bean id="ssfb" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<beans:property name="dataSource" ref="dataSource" /><!-- 
+			DB경로 -->
+		<!-- mapperLocations는 DB에 처리한 mapper xml이 어디에 있는 지정한다. -->
+		<beans:property name="mapperLocations" value="classpath*:kr/tripper/holo/mapper/*mapper.xml" />
+	</beans:bean>
+
+	<beans:bean class="org.mybatis.spring.SqlSessionTemplate">
+		<beans:constructor-arg ref="ssfb" />
+	</beans:bean>
+
+	<context:component-scan base-package="kr.tripper.holo" />
+</beans:beans>

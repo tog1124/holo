@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 루트 엘리먼트로 쓰는 mapper로 문서 타입을 지정한다. -->
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- xml 설정이 있는 매퍼 위치 -->
+<mapper namespace="member-mapper">
+<!-- 매퍼에서 지정한 이름. -->
+	<!-- 회원가입 -->
+	<insert id="insertMember">
+		INSERT INTO member VALUES (#{email}, #{pwd})
+	</insert>
+	<!-- 로그인 확인 -->
+	<select id="login">
+      select pwd from member where email = #{email}
+   </select>
+	<!-- 사용자 상세정보 입력 -->
+	<update id="updateMember">
+		UPDATE member set f_name = #{f_name}, l_name =
+		#{l_name}, nickname = #{nickname}, state = #{state}, phonnum =
+		#{phonnum} where email = #{email}
+	</update>
+	<!-- post전부 불러오기 -->
+	<select id="selectAllPostList" resultType="kr.tripper.holo.dto.PostVO">
+		select * from post
+	</select>
+	<!-- postno에 해당하는 리뷰 전부 불러오기 -->
+	<select id="selectReviewOnPost" resultType="kr.tripper.holo.dto.ReviewVO">
+		select * from review
+		where postno = #{ postno }
+	</select>
+	<!-- 리뷰 작성 -->
+	<insert id="insertReview">
+		INSERT INTO review VALUES (#{postno}, #{email},
+		#{repoto}, #{rescore},
+		#{retitle},#{recontent},#{retip},#{reperiod},#{retype},#{rewhy})
+	</insert>
+	<!-- 리뷰 수정 -->
+	<update id="up">
+
+	</update>
+	<!-- 리뷰 삭제 -->
+	<delete id="del">
+
+	</delete>
+	<!-- 게시물 작성(운영자 권한) -->
+	<insert id="insertPost">
+		INSERT INTO post VALUES (post_no.nextval, #{poto},
+		#{postname}, #{local}, #{time}, #{postcall})
+	</insert>
+</mapper>
+
