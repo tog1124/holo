@@ -5,16 +5,26 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!-- xml 설정이 있는 매퍼 위치 -->
 <mapper namespace="member-mapper">
+<<<<<<< HEAD
 
 <!-- 매퍼에서 지정한 이름. -->
+=======
+	<!-- 매퍼에서 지정한 이름. -->
+>>>>>>> refs/remotes/origin/master
 	<!-- 회원가입 -->
 	<insert id="insertMember">
 		INSERT INTO member VALUES (#{email}, #{pwd})
 	</insert>
 	<!-- 로그인 확인 -->
+<<<<<<< HEAD
 	<select id="login" parameterType="String" resultType="java.lang.String">
       select pwd from member where email = #{email}
    </select>
+=======
+	<select id="login">
+		select pwd from member where email = #{email}
+	</select>
+>>>>>>> refs/remotes/origin/master
 	<!-- 사용자 상세정보 입력 -->
 	<update id="updateMember">
 		UPDATE member set f_name = #{f_name}, l_name =
@@ -37,12 +47,16 @@
 		#{retitle},#{recontent},#{retip},#{reperiod},#{retype},#{rewhy})
 	</insert>
 	<!-- 리뷰 수정 -->
-	<update id="up">
-		UPDATE review
-	</update>	
+	<update id="reviewUpdate">
+		UPDATE review set repoto = #{repoto}, rescore =
+		#{rescore},
+		retitle = #{retitle}, recontent = #{recontent}, retip =
+		#{retip}, reperiod = #{reperiod}, retype = #{retype}, rewhy = #{rewhy}
+		where postno = #{postno} and emial = #{email}
+	</update>
 	<!-- 리뷰 삭제 -->
-	<delete id="del">
-
+	<delete id="reviewDelete">
+		DELETE from review where postno = #{postno} and emial = #{email}
 	</delete>
 	<!-- 게시물 작성(운영자 권한) -->
 	<insert id="insertPost">
