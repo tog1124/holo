@@ -26,7 +26,7 @@ public class LoginServiceImpl implements LoginService {
 				chk = "redirect:main";
 			}
 		} 
-		else {chk="redirect:/alert";}
+		else {chk="redirect:/";}
 		return chk;
 	}
 	@Override
@@ -45,6 +45,12 @@ public class LoginServiceImpl implements LoginService {
 		mVo.setState("설정하지 않음");
 		mDaoImpl.signup(mVo);
 		return "redirect:/";
+	}
+	@Override
+	public String loginalert() {
+		String msg = "아이디 또는 비밀번호를 확인하세요.";
+		String url = "redirect:/";
+		return url;
 	}
 
 }

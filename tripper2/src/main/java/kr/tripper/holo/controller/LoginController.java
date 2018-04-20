@@ -54,10 +54,4 @@ public class LoginController {
 	public String forgetpassword(Locale locale, Model model) {
 		return "login";
 	}
-	@RequestMapping(value = "/alert", method = RequestMethod.GET)
-	public String alert(Locale locale, Model model) {
-		return "alert";
-	}
-	
-	
 }

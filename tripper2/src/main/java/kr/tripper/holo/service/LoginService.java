@@ -10,5 +10,5 @@ public interface LoginService {
 	String signin(String email, String password,HttpSession session);
 	String signup(MemberVO mVo,String signupemail,String signuppassword);
 	String logout(HttpSession session);
-
+	String loginalert();
 }
