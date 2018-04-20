@@ -16,8 +16,12 @@ public class MemberDAOImpl implements MemberDAO {
 	
 	@Override
 	public String signin(String email) {
+<<<<<<< HEAD
 		return sqlSession.selectOne(mapperPath+".login",email);
 		
+=======
+		return  sqlSession.selectOne(mapperPath+".login",email);
+>>>>>>> refs/remotes/origin/master
 	}
 
 	@Override
