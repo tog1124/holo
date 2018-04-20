@@ -18,15 +18,13 @@ public class MemberDAOImpl implements MemberDAO {
 	public String signin(String email) {
 		return  sqlSession.selectOne(mapperPath+".login",email);
 	}
-
 	@Override
 	public boolean rememberid() {
 		return false;
 	}
-
 	@Override
 	public void signup(MemberVO mVo) {
-	
+		sqlSession.insert(mapperPath+".insertMember", mVo);
 	}
 	
 	

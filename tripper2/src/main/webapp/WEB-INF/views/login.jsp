@@ -43,7 +43,7 @@
         					        </form>
     				        </div>
     				        <div class="signup-cont cont">
-                <form action="signup" method="post" enctype="multipart/form-data">
+                <form action="signup" method="post">
                  						   <input type="email" name="signupemail" id="signupemail" class="inpt" required="required" placeholder="Your email">
 						                    <label for="email">Your email</label>
 						                    <input type="password" name="signuppassword" id="signuppassword" class="inpt" required="required" placeholder="Your password">

@@ -8,8 +8,8 @@
 <!-- 매퍼에서 지정한 이름. -->
 	<!-- 매퍼에서 지정한 이름. -->
 	<!-- 회원가입 -->
-	<insert id="insertMember">
-		INSERT INTO member VALUES (#{email}, #{pwd})
+	<insert id="insertMember"  parameterType="kr.tripper.holo.dto.MemberVO">
+		INSERT INTO member VALUES (#{email},#{pwd},#{f_name},#{l_name},#{nickname},#{state},#{phonnum})
 	</insert>
 	<!-- 로그인 확인 -->
 	<select id="login" parameterType="String" resultType="java.lang.String">
