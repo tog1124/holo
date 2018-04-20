@@ -11,7 +11,7 @@
 		INSERT INTO member VALUES (#{email}, #{pwd})
 	</insert>
 	<!-- 로그인 확인 -->
-	<select id="login">
+	<select id="login" parameterType="String" resultType="java.lang.String">
 		select pwd from member where email = #{email}
 	</select>
 	<!-- 사용자 상세정보 입력 -->
@@ -52,5 +52,10 @@
 		INSERT INTO post VALUES (post_no.nextval, #{poto},
 		#{postname}, #{local}, #{time}, #{postcall})
 	</insert>
+	<select id="search">
+		SELECT * from post where post
+	</select>
+	
+	
 </mapper>
 

@@ -41,6 +41,7 @@
 <!-- Skins Style-->
 <link rel="stylesheet" type="text/css"
 	href="resources/css/skins/blue.css" title="blue" media="all" />
+<link href="resources/css/search.css" rel="stylesheet">
 </head>
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -83,10 +84,11 @@
 					</button>
 					<a class="navbar-brand" href="main.do">
 						<div class="logo-text">
-							<span><samp>SE</samp>Solo</span>ESCAPE
+							<span><samp>HOLO</samp>Tripper</span>
 						</div>
 					</a>
 				</div>
+				
 				<div class="collapse navbar-collapse"
 					id="bs-example-navbar-collapse-1" data-hover="dropdown"
 					data-animations="fadeIn">
@@ -111,17 +113,23 @@
 								<li><a href="blog-details.jsp">Blog Details</a></li>
 							</ul></li>
 						<li class="dropdown"><a href="#" class="dropdown-toggle"
-							data-toggle="dropdown" role="button" aria-expanded="false">내 정보
-								<span class="caret"></span>
+							data-toggle="dropdown" role="button" aria-expanded="false">내
+								정보 <span class="caret"></span>
 						</a>
 							<ul class="dropdown-menu" role="menu">
 								<li><a href="write.do">내 정보 수정</a></li>
-								<li><a href="logout.do">로그아웃</a></li>
+								<li><a href="login">로그아웃</a></li>
 							</ul></li>
-						<li><a href="contact.jsp">Contact Us</a></li>
+						<li><div class="d5">
+						<form>
+							<input type="text" placeholder="검색어 입력">
+						</form>
+					</div></li>
 					</ul>
+					
 				</div>
 				<!--/.nav-collapse -->
+				
 			</div>
 		</nav>
 	</header>
@@ -144,10 +152,13 @@
 							LOVED, LOVE AND BE LOVABLE. (BENJAMIN FRANKLIN)</h1>
 						<h3 class="wow slideInRight color-white">사랑 받고 싶다면 사랑하라, 그리고
 							사랑스럽게 행동하라. (벤자민 프랭클린)</h3>
-						<a href="https://www.lge.co.kr/lgekor/event/eventProgressList.do" class="btn btn-primary wow bounceInUp">Get
-							Started! <i class="fa fa-angle-double-right"></i>
-						</a> &nbsp; <a href="https://www.lge.co.kr/lgekor/event/eventProgressList.do" class="btn btn-seconday wow bounceInUp">Know
-							More <i class="fa fa-angle-double-right"></i>
+						<a href="https://www.lge.co.kr/lgekor/event/eventProgressList.do"
+							class="btn btn-primary wow bounceInUp">Get Started! <i
+							class="fa fa-angle-double-right"></i>
+						</a> &nbsp; <a
+							href="https://www.lge.co.kr/lgekor/event/eventProgressList.do"
+							class="btn btn-seconday wow bounceInUp">Know More <i
+							class="fa fa-angle-double-right"></i>
 						</a>
 					</div>
 				</div>
@@ -161,10 +172,13 @@
 							LOVE BY LOVING. (IRIS MURDOCH)</h1>
 						<h3 class="wow slideInRight color-white">우리는 오로지 사랑을 함으로써 사랑을
 							배울 수 있다. (아이리스 머독)</h3>
-						<a href="http://www.samsungsales.co.kr/event/list.sesc?menu=w101" class="btn btn-primary wow bounceInUp">Get
-							Started! <i class="fa fa-angle-double-right"></i>
-						</a> &nbsp; <a href="http://www.samsungsales.co.kr/event/list.sesc?menu=w101" class="btn btn-seconday wow bounceInUp">Know
-							More <i class="fa fa-angle-double-right"></i>
+						<a href="http://www.samsungsales.co.kr/event/list.sesc?menu=w101"
+							class="btn btn-primary wow bounceInUp">Get Started! <i
+							class="fa fa-angle-double-right"></i>
+						</a> &nbsp; <a
+							href="http://www.samsungsales.co.kr/event/list.sesc?menu=w101"
+							class="btn btn-seconday wow bounceInUp">Know More <i
+							class="fa fa-angle-double-right"></i>
 						</a>
 					</div>
 				</div>
@@ -178,10 +192,12 @@
 							FOR LOVE BUT TO LOVE MORE. (HENRY DAVID THOREAU)</h1>
 						<h3 class="wow slideInRight color-white">더 많이 사랑하는 것 외에 다른
 							사랑의 치료약은 없다. (헨리 데이비드 소로우)</h3>
-						<a href="https://www.lge.co.kr/lgekor/event/eventProgressList.do" class="btn btn-primary wow bounceInUp">Get
-							Started! <i class="fa fa-angle-double-right"></i>
-						</a> &nbsp; <a href="https://web.dominos.co.kr/event/list?gubun=E0200" class="btn btn-seconday wow bounceInUp">Know
-							More <i class="fa fa-angle-double-right"></i>
+						<a href="https://www.lge.co.kr/lgekor/event/eventProgressList.do"
+							class="btn btn-primary wow bounceInUp">Get Started! <i
+							class="fa fa-angle-double-right"></i>
+						</a> &nbsp; <a href="https://web.dominos.co.kr/event/list?gubun=E0200"
+							class="btn btn-seconday wow bounceInUp">Know More <i
+							class="fa fa-angle-double-right"></i>
 						</a>
 					</div>
 				</div>
@@ -199,35 +215,34 @@
 		</div>
 	</section>
 	<section id="section1" class="section-margine">
-	<form method="get" action="write.do">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-4 col-lg-4 ">
-					<div class="section-1-box wow bounceIn">
+		<form method="get" action="write.do">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4 col-lg-4 ">
+						<div class="section-1-box wow bounceIn"></div>
 					</div>
-				</div>
-				<div class="col-md-4 col-lg-4">
-					<div class="section-1-box wow bounceIn" data-wow-delay=".1s">
-						<div class="card-image" id="card-image">
-							<img src="">
-						</div>
-						<div>
-							<h4 class="text-center" name="card-name" id="card-name"></h4>
-							<h4 class="text-center" name="card-age" id="card-age"></h4>
-							<h4 class="text-center" name="card-location" id="card-location"></h4>
-							<p class="text-center" name="card-content" id="card-content"></p>
-							<div style="text-align: right; padding-bottom: 15px;">
-								<button>수정</button>
+					<div class="col-md-4 col-lg-4">
+						<div class="section-1-box wow bounceIn" data-wow-delay=".1s">
+							<div class="card-image" id="card-image">
+								<img src="">
+							</div>
+							<div>
+								<h4 class="text-center" name="card-name" id="card-name"></h4>
+								<h4 class="text-center" name="card-age" id="card-age"></h4>
+								<h4 class="text-center" name="card-location" id="card-location"></h4>
+								<p class="text-center" name="card-content" id="card-content"></p>
+								<div style="text-align: right; padding-bottom: 15px;">
+									<button>수정</button>
+								</div>
 							</div>
 						</div>
 					</div>
-				</div>
-				<div class="col-md-4 col-lg-4">
-					<div class="section-1-box wow bounceIn" data-wow-delay=".1s">
+					<div class="col-md-4 col-lg-4">
+						<div class="section-1-box wow bounceIn" data-wow-delay=".1s">
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
 		</form>
 	</section>
 	<section id="section5" class="section-margine section-5-background">
@@ -259,23 +274,24 @@
 				<div class="col-md-12">
 					<div class="testimonial_wrapper">
 						<div class="testimonial_slider wow fadeInUp">
-			
-				<form method="post" action="" name="myform" class="myform">
-							<div class="single_testimonial">
-								<div class="testmonial_img">
-									<img src= alt="images"	style="height: 100%; width: 100%; border-radius:50%;">
-								</div>
-								<div class="testimonial_contents">
-									<div class="name_desig">
-										<p class="name"></p>
-										<span class="desig" id="age">세</span>
+
+							<form method="post" action="" name="myform" class="myform">
+								<div class="single_testimonial">
+									<div class="testmonial_img">
+										<img src=alt=
+											"images"	style="height: 100%; width: 100%; border-radius: 50%;">
 									</div>
-									<span class="cardlocation" id="location"></span>
-									<div class="testimonial_text" id="content">
-										<p></p>
+									<div class="testimonial_contents">
+										<div class="name_desig">
+											<p class="name"></p>
+											<span class="desig" id="age">세</span>
+										</div>
+										<span class="cardlocation" id="location"></span>
+										<div class="testimonial_text" id="content">
+											<p></p>
+										</div>
 									</div>
 								</div>
-							</div>
 							</form>
 						</div>
 					</div>
