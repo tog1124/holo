@@ -26,6 +26,8 @@ public class MemberDAOImpl implements MemberDAO {
 	public void signup(MemberVO mVo) {
 		sqlSession.insert(mapperPath+".insertMember", mVo);
 	}
-	
-	
+	@Override
+	public String emailoverlap(String email) {
+		return sqlSession.selectOne(mapperPath+".emailsearch", email);
+	}
 }

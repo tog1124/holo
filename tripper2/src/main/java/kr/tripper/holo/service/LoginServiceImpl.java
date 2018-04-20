@@ -26,16 +26,20 @@ public class LoginServiceImpl implements LoginService {
 				chk = "redirect:main";
 			}
 		} 
-		else {chk="redirect:/";}
+		else {chk="redirect:/loginalret";}
 		return chk;
 	}
 	@Override
 	public String logout(HttpSession session) {
 		session.invalidate();
-		return "redirect:/";
+		return "redirect:login";
 	}
 	@Override
-	public String signup(MemberVO mVo,String signupemail,String signuppassword) {
+	public String signup(MemberVO mVo,String signupemail,String signuppassword, String cppassword) {
+		String move = null;
+		String dbemail = mDaoImpl.emailoverlap(signupemail);
+		System.out.println(dbemail);
+		if (!signupemail.equals(dbemail)&&signuppassword.equals(cppassword)) {
 		mVo.setEmail(signupemail);
 		mVo.setPwd(signuppassword);
 		mVo.setF_name("설정하지 않음");
@@ -44,14 +48,15 @@ public class LoginServiceImpl implements LoginService {
 		mVo.setPhonnum("설정하지 않음");
 		mVo.setState("설정하지 않음");
 		mDaoImpl.signup(mVo);
-		return "redirect:/";
+		move="redirect:/welcomealert";
+		}
+		else if(!signuppassword.equals(cppassword)){
+			move="redirect:/signupalret"; 
+			}
+		else if (signupemail.equals(dbemail)) {
+			move="redirect:/emailoverralret";
+		}
+		return move;
 	}
-	@Override
-	public String loginalert() {
-		String msg = "아이디 또는 비밀번호를 확인하세요.";
-		String url = "redirect:/";
-		return url;
-	}
-
 }
 

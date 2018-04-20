@@ -11,6 +11,10 @@
 	<insert id="insertMember"  parameterType="kr.tripper.holo.dto.MemberVO">
 		INSERT INTO member VALUES (#{email},#{pwd},#{f_name},#{l_name},#{nickname},#{state},#{phonnum})
 	</insert>
+	<!-- 이메일 중복 -->
+	<select id="emailsearch" parameterType="String" resultType="java.lang.String">
+      select email from member where email = #{email}
+   </select>
 	<!-- 로그인 확인 -->
 	<select id="login" parameterType="String" resultType="java.lang.String">
       select pwd from member where email = #{email}
