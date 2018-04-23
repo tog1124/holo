@@ -22,16 +22,15 @@
 
 <section class="container">
 		    <article class="half">
-			        <h1>Find Password</h1>
+			        <h1>코드를 입력하세요</h1>
 			        <div class="tabs">
 			        </div>
 			        <div class="content">
 				            <div class="signin-cont cont">
-					                <form action="sendcode" method="post">
-						                    <input type="email" name="email" id="email" class="inpt" required="required" placeholder="Your email">
-						                    <label for="email">Your email</label>
+					                <form action="codechk" method="post">
+						                    <input type="text" name="code" id="code" class="inpt" required="required" placeholder="Code">
 						                    <div class="submit-wrap">
-							                        <input type="submit" value="SEND CODE"  class="submit">
+							                        <input type="submit" value="OK"  class="submit">
 						                    </div>
         					        </form>
     				        </div>

@@ -7,11 +7,16 @@
 <title></title>
 </head>
 <body>
+<form id="frm">
+</form>
 	<script>
 	var message = '${msg}'; 
 	var returnUrl = '${url}'; 
+	var action = '${action}';
 		alert(message);
-		location.href = returnUrl; 
+		document.getElementById('frm').method = action; 
+		document.getElementById('frm').action = returnUrl;
+		document.getElementById('frm').submit();
 	</script>	
 </body>
 </html>

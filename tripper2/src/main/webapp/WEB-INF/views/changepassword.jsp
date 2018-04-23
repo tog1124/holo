@@ -22,16 +22,18 @@
 
 <section class="container">
 		    <article class="half">
-			        <h1>Find Password</h1>
+			        <h1>Change Password</h1>
 			        <div class="tabs">
 			        </div>
 			        <div class="content">
 				            <div class="signin-cont cont">
-					                <form action="sendcode" method="post">
-						                    <input type="email" name="email" id="email" class="inpt" required="required" placeholder="Your email">
-						                    <label for="email">Your email</label>
+					                <form action="changepassword" method="post">
+						                  <input type="password" name="signuppassword" id="signuppassword" class="inpt" required="required" placeholder="Your password">
+                						    <label for="password">Your password</label>
+                						        <input type="password" name="cppassword" id="cppassword" class="inpt" required="required" placeholder="Again password">
+                						    <label for="password">Again password</label>
 						                    <div class="submit-wrap">
-							                        <input type="submit" value="SEND CODE"  class="submit">
+							                        <input type="submit" value="OK"  class="submit">
 						                    </div>
         					        </form>
     				        </div>

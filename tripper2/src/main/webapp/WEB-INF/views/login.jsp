@@ -13,32 +13,32 @@
 <meta name="author" content="rkwebdesigns">
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> 
-<title>SOLO Escape</title>
+<title>Tripper</title>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/loginmainstyle.css" />
 <!-- Fav Icons   -->
 <link rel="icon" href="${pageContext.request.contextPath}/resources/images/favicon.ico" type="image/x-icon">
 </head>
-<body>
+<body onLoad="getLogin()">
 
 <section class="container">
 		    <article class="half">
-			        <h1>Azure</h1>
+			        <h1>Tripper</h1>
 			        <div class="tabs">
 				            <span class="tab signin active"><a href="#signin">Sign in</a></span>
 				            <span class="tab signup"><a href="#signup">Sign up</a></span>
 			        </div>
 			        <div class="content">
 				            <div class="signin-cont cont">
-					                <form action="signin" method="post">
+					                <form action="signin" method="post" name="loginForm">
 						                    <input type="email" name="email" id="email" class="inpt" required="required" placeholder="Your email">
 						                    <label for="email">Your email</label>
 						                    <input type="password" name="password" id="password" class="inpt" required="required" placeholder="Your password">
                 						    <label for="password">Your password</label>
-						                    <input type="checkbox" id="remember" class="checkbox" checked>
+						                    <input type="checkbox" id="remember" name="remember" class="checkbox" checked>
 						                    <label for="remember">Remember me</label>
 						                    <div class="submit-wrap">
-							                        <input type="submit" value="Sign in" class="submit">
-							                        <a href="forgetpassword" class="more">Forgot your password?</a>
+							                        <input type="submit" value="Sign in"  class="submit" onclick="saveCookie();">
+							                        <a href="findpassword" class="more">Forgot your password?</a>
 						                    </div>
         					        </form>
     				        </div>
@@ -61,5 +61,6 @@
 		    <div class="half bg"></div>
 	</section>
 			<script src="${pageContext.request.contextPath}/resources//js/loginmainscript.js"></script>
+			<script src="${pageContext.request.contextPath}/resources//js/rememberid.js"></script>
 </body>
 </html>

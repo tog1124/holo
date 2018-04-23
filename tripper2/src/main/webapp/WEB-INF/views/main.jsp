@@ -13,7 +13,7 @@
 <meta name="keywords" content="Pixel">
 <meta name="author" content="rkwebdesigns">
 <!-- Site Title   -->
-<title>SOLO Escape</title>
+<title>Tripper</title>
 <!-- Card script -->
 <link rel="stylesheet" type="text/css" href="css/cardstyle.css" />
 <!-- Fav Icons   -->
@@ -34,13 +34,11 @@
 <link href="resources/css/owl.carousel.css" rel="stylesheet">
 <!-- Main CSS -->
 <link href="resources/css/style.css" rel="stylesheet">
-<link href="css/cardstyle.css" rel="stylesheet">
-<link href="css/othercard.css" rel="stylesheet">
 <!-- Responsive CSS -->
 <link href="resources/css/responsive.css" rel="stylesheet">
 <!-- Skins Style-->
-<link rel="stylesheet" type="text/css"
-	href="resources/css/skins/blue.css" title="blue" media="all" />
+<link rel="stylesheet" type="text/css" href="resources/css/skins/blue.css" title="blue" media="all" />
+<link href="resources/css/search.css" rel="stylesheet">
 </head>
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -50,10 +48,9 @@
 			<div class="container">
 				<div class="row ">
 					<ul class="contact-detail2 col-sm-6 pull-left">
-						<li><a href="#" target="_blank"><i class="fa fa-mobile"></i>Call
-								+82 10-2977-1539</a></li>
+						<li><a href="#" target="_blank"><i class="fa fa-mobile"></i><%=session.getAttribute("phonenum") %></a></li>
 						<li><a href="#" target="_blank"><i
-								class="fa fa-envelope-o"></i> donghyun1538@gmail.com</a></li>
+								class="fa fa-envelope-o"></i> <%=session.getAttribute("email")%></a></li>
 					</ul>
 					<div class="social-links col-sm-6 pull-right">
 						<ul class="social-icons pull-right">
@@ -83,7 +80,7 @@
 					</button>
 					<a class="navbar-brand" href="main.do">
 						<div class="logo-text">
-							<span><samp>SE</samp>Solo</span>ESCAPE
+							<span><samp>HT</samp>Holo</span>Tripper
 						</div>
 					</a>
 				</div>
@@ -116,7 +113,7 @@
 						</a>
 							<ul class="dropdown-menu" role="menu">
 								<li><a href="write.do">내 정보 수정</a></li>
-								<li><a href="logout.do">로그아웃</a></li>
+								<li><a href="logout">로그아웃</a></li>
 							</ul></li>
 						<li><a href="contact.jsp">Contact Us</a></li>
 					</ul>

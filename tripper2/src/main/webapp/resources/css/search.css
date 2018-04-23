@@ -1,0 +1,36 @@
+.d5 {
+	background: #ffffff;
+	width: 300px;
+	height: 40px;
+}
+
+.d5 input, .d5 button {
+	outline: none;
+	background: transparent;
+}
+
+.d5 input {
+	width: 80%;
+	height: 42px;
+	padding-left: 15px;
+	border: 3px solid #eeeeee;
+}
+
+.d5 button {
+	border: none;
+	height: 42px;
+	width: 42px;
+	display: inline-block;
+	cursor: pointer;
+}
+
+.d5 button:before {
+	content: "\f002";
+	font-family: FontAwesome;
+	font-size: 16px;
+	color: #F9F0DA;
+}
+
+.d5 input:focus {
+	border-color: #00aef0;
+}

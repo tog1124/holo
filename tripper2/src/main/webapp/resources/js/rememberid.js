@@ -16,8 +16,8 @@ function saveLogin(id)
  }
 }
 function saveCookie(){
-	if(loginForm.rememberid.checked) 
-		saveLogin(loginForm.innum.value);
+	if(loginForm.remember.checked) 
+		saveLogin(loginForm.email.value);
  else {
 saveLogin("");
  }
@@ -41,7 +41,7 @@ function getLogin()
  // 가져온 쿠키값이 있으면
  if(val!= "")
  {
-  document.loginForm.innum.value = val;
-  document.loginForm.rememberid.checked = true;
+  document.loginForm.email.value = val;
+  document.loginForm.remember.checked = true;
  }
 }

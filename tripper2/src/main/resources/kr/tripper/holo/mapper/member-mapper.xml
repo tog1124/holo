@@ -15,12 +15,36 @@
 	<select id="emailsearch" parameterType="String" resultType="java.lang.String">
       select email from member where email = #{email}
    </select>
+   <!-- F_name 찾기 -->
+	<select id="selectF_name" parameterType="String" resultType="java.lang.String">
+      select f_name from member where email = #{email}
+   </select>
+     <!-- L_name 찾기 -->
+	<select id="selectL_name" parameterType="String" resultType="java.lang.String">
+      select l_name from member where email = #{email}
+   </select>
+     <!-- Nickname 찾기 -->
+	<select id="selectNickname" parameterType="String" resultType="java.lang.String">
+      select nickname from member where email = #{email}
+   </select>
+     <!-- State 찾기 -->
+	<select id="selectState" parameterType="String" resultType="java.lang.String">
+      select state from member where email = #{email}
+   </select>
+     <!-- Phonnum 찾기 -->
+	<select id="selectPhonnum" parameterType="String" resultType="java.lang.String">
+      select phonnum from member where email = #{email}
+   </select>
 	<!-- 로그인 확인 -->
 	<select id="login" parameterType="String" resultType="java.lang.String">
       select pwd from member where email = #{email}
    </select>
+   <!-- 비밀번호 변경 -->
+	<update id="updatePassword" parameterType="kr.tripper.holo.dto.MemberVO">
+		UPDATE member set pwd = #{pwd} where email = #{email}
+	</update>
 	<!-- 사용자 상세정보 입력 -->
-	<update id="updateMember">
+	<update id="updateMember" parameterType="kr.tripper.holo.dto.MemberVO">
 		UPDATE member set f_name = #{f_name}, l_name =
 		#{l_name}, nickname = #{nickname}, state = #{state}, phonnum =
 		#{phonnum} where email = #{email}

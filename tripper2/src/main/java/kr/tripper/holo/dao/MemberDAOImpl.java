@@ -30,4 +30,28 @@ public class MemberDAOImpl implements MemberDAO {
 	public String emailoverlap(String email) {
 		return sqlSession.selectOne(mapperPath+".emailsearch", email);
 	}
+	@Override
+	public int updatePassword(MemberVO mVo) {
+		return sqlSession.update(mapperPath+".updatePassword", mVo);
+	}
+	@Override
+	public String selectF_name(String email) {
+		return sqlSession.selectOne(mapperPath+".selectF_name", email);
+	}
+	@Override
+	public String selectL_name(String email) {
+		return sqlSession.selectOne(mapperPath+".selectL_name", email);
+	}
+	@Override
+	public String selectNickname(String email) {
+		return sqlSession.selectOne(mapperPath+".selectNickname", email);
+	}
+	@Override
+	public String selectState(String email) {
+		return sqlSession.selectOne(mapperPath+".selectState", email);
+	}
+	@Override
+	public String selectPhonnum(String email) {
+		return sqlSession.selectOne(mapperPath+".selectPhonnum", email);
+	}
 }
