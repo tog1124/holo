@@ -16,27 +16,18 @@ public class MemberDAOImpl implements MemberDAO {
 	
 	@Override
 	public String signin(String email) {
-<<<<<<< HEAD
-		return sqlSession.selectOne(mapperPath+".login",email);
-		
-=======
 		return  sqlSession.selectOne(mapperPath+".login",email);
->>>>>>> refs/remotes/origin/master
 	}
-
 	@Override
 	public boolean rememberid() {
-		
 		return false;
 	}
-
 	@Override
-	public void signup(String email, String password) {
-		// TODO Auto-generated method stub
-		
+	public void signup(MemberVO mVo) {
+		sqlSession.insert(mapperPath+".insertMember", mVo);
 	}
-
-	
-	
-	
+	@Override
+	public String emailoverlap(String email) {
+		return sqlSession.selectOne(mapperPath+".emailsearch", email);
+	}
 }

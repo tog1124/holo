@@ -5,30 +5,20 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!-- xml 설정이 있는 매퍼 위치 -->
 <mapper namespace="member-mapper">
-<<<<<<< HEAD
-
 <!-- 매퍼에서 지정한 이름. -->
-=======
 	<!-- 매퍼에서 지정한 이름. -->
->>>>>>> refs/remotes/origin/master
 	<!-- 회원가입 -->
-	<insert id="insertMember">
-		INSERT INTO member VALUES (#{email}, #{pwd})
+	<insert id="insertMember"  parameterType="kr.tripper.holo.dto.MemberVO">
+		INSERT INTO member VALUES (#{email},#{pwd},#{f_name},#{l_name},#{nickname},#{state},#{phonnum})
 	</insert>
+	<!-- 이메일 중복 -->
+	<select id="emailsearch" parameterType="String" resultType="java.lang.String">
+      select email from member where email = #{email}
+   </select>
 	<!-- 로그인 확인 -->
-<<<<<<< HEAD
-	<select id="login" parameterType="String" resultType="java.lang.String">
-=======
-<<<<<<< HEAD
 	<select id="login" parameterType="String" resultType="java.lang.String">
       select pwd from member where email = #{email}
    </select>
-=======
-	<select id="login">
->>>>>>> refs/remotes/origin/master
-		select pwd from member where email = #{email}
-	</select>
->>>>>>> refs/remotes/origin/master
 	<!-- 사용자 상세정보 입력 -->
 	<update id="updateMember">
 		UPDATE member set f_name = #{f_name}, l_name =
@@ -67,10 +57,8 @@
 		INSERT INTO post VALUES (post_no.nextval, #{poto},
 		#{postname}, #{local}, #{time}, #{postcall})
 	</insert>
-	<select id="search">
-		SELECT * from post where post
+	<!-- 게시물 불러오기 -->
+	<select id="searchPost">
+		select * from post where postname like '%#{code}%' or local like '%#{code}%' or tag like '%#{code}%'
 	</select>
-	
-	
 </mapper>
-

@@ -1,14 +1,13 @@
 package kr.tripper.holo.service;
 
+import javax.servlet.http.HttpSession;
+
+import kr.tripper.holo.dto.MemberVO;
+
+
 public interface LoginService {
-<<<<<<< HEAD
-	
-	String signin(String email,String password);
-	String signup(String email,String password);
-	
-=======
 
-	String signin(String email, String password);
-
->>>>>>> refs/remotes/origin/master
+	String signin(String email, String password,HttpSession session);
+	String signup(MemberVO mVo,String signupemail,String signuppassword,String cppassword);
+	String logout(HttpSession session);
 }

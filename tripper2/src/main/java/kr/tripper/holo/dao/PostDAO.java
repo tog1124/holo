@@ -6,6 +6,6 @@ import kr.tripper.holo.dto.PostVO;
 
 public interface PostDAO {
 	
-	List search(List code);
+	List<PostVO> search(String code);
 
 }
