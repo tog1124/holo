@@ -14,8 +14,6 @@
 <meta name="author" content="rkwebdesigns">
 <!-- Site Title   -->
 <title>Tripper</title>
-<!-- Card script -->
-<link rel="stylesheet" type="text/css" href="css/cardstyle.css" />
 <!-- Fav Icons   -->
 <link rel="icon" href="resources/images/favicon.ico" type="image/x-icon">
 <!-- Bootstrap -->
@@ -48,9 +46,9 @@
 			<div class="container">
 				<div class="row ">
 					<ul class="contact-detail2 col-sm-6 pull-left">
-						<li><a href="#" target="_blank"><i class="fa fa-mobile"></i><%=session.getAttribute("phonenum") %></a></li>
+						<li><a href="#" target="_blank"><i class="fa fa-mobile"></i>${sessionScope.phonenum}</a></li>
 						<li><a href="#" target="_blank"><i
-								class="fa fa-envelope-o"></i> <%=session.getAttribute("email")%></a></li>
+								class="fa fa-envelope-o"></i>  ${sessionScope.email}</a></li>
 					</ul>
 					<div class="social-links col-sm-6 pull-right">
 						<ul class="social-icons pull-right">
@@ -78,7 +76,7 @@
 							class="icon-bar"></span> <span class="icon-bar"></span> <span
 							class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="main.do">
+					<a class="navbar-brand" href="main">
 						<div class="logo-text">
 							<span><samp>HT</samp>Holo</span>Tripper
 						</div>
@@ -88,23 +86,23 @@
 					id="bs-example-navbar-collapse-1" data-hover="dropdown"
 					data-animations="fadeIn">
 					<ul class="nav navbar-nav navbar-right">
-						<li class="active"><a href="main.do">Home</a></li>
+						<li class="active"><a href="main">Home</a></li>
 						<li><a href="other.do">See card </a></li>
 						<li><a href="services.jsp">Services </a></li>
 						<li class="dropdown"><a href="#" class="dropdown-toggle"
-							data-toggle="dropdown" role="button" aria-expanded="false">Work
+							data-toggle="dropdown" role="button" aria-expanded="false">명소
 								<span class="caret"></span>
 						</a>
 							<ul class="dropdown-menu">
-								<li><a href="portfolio-3.jsp">3 colums</a></li>
-								<li><a href="portfolio-4.jsp">4 colums</a></li>
+								<li><a href="play">오락거리</a></li>
+								<li><a href="food">음식점</a></li>
 							</ul></li>
 						<li class="dropdown"><a href="#" class="dropdown-toggle"
 							data-toggle="dropdown" role="button" aria-expanded="false">Blog
 								<span class="caret"></span>
 						</a>
 							<ul class="dropdown-menu">
-								<li><a href="blog-listing.jsp">Blog Listing</a></li>
+								<li><a href="blog">Blog Listing</a></li>
 								<li><a href="blog-details.jsp">Blog Details</a></li>
 							</ul></li>
 						<li class="dropdown"><a href="#" class="dropdown-toggle"
@@ -112,10 +110,15 @@
 								<span class="caret"></span>
 						</a>
 							<ul class="dropdown-menu" role="menu">
-								<li><a href="write.do">내 정보 수정</a></li>
+								<li><a href="writeinfo">내 정보 수정</a></li>
+								<li><a href="findpassword">비밀번호 변경</a></li>
 								<li><a href="logout">로그아웃</a></li>
 							</ul></li>
-						<li><a href="contact.jsp">Contact Us</a></li>
+						  <li><div class="d5">
+                  <form action="searchPost" method="get">
+                     <input type="text" placeholder="검색어 입력">
+                  </form>
+               </div></li>
 					</ul>
 				</div>
 				<!--/.nav-collapse -->
@@ -195,38 +198,7 @@
 			</a>
 		</div>
 	</section>
-	<section id="section1" class="section-margine">
-	<form method="get" action="write.do">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-4 col-lg-4 ">
-					<div class="section-1-box wow bounceIn">
-					</div>
-				</div>
-				<div class="col-md-4 col-lg-4">
-					<div class="section-1-box wow bounceIn" data-wow-delay=".1s">
-						<div class="card-image" id="card-image">
-							<img src="">
-						</div>
-						<div>
-							<h4 class="text-center" name="card-name" id="card-name"></h4>
-							<h4 class="text-center" name="card-age" id="card-age"></h4>
-							<h4 class="text-center" name="card-location" id="card-location"></h4>
-							<p class="text-center" name="card-content" id="card-content"></p>
-							<div style="text-align: right; padding-bottom: 15px;">
-								<button>수정</button>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4 col-lg-4">
-					<div class="section-1-box wow bounceIn" data-wow-delay=".1s">
-					</div>
-				</div>
-			</div>
-		</div>
-		</form>
-	</section>
+
 	<section id="section5" class="section-margine section-5-background">
 		<div class="container">
 			<div class="row">

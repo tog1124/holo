@@ -15,5 +15,6 @@ public interface LoginService {
 	void sendmail(String email,HttpSession session);
 	String chkcode(String code,HttpSession session);
 	String changpassword(String signuppassword,String cppassword,HttpSession session,MemberVO mVo);
-	String sessionchk(HttpSession session);
+	String sessionchk(HttpSession session,String page);
+	String login(HttpSession session);
 }

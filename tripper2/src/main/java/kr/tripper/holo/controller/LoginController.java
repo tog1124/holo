@@ -30,6 +30,7 @@ public class LoginController {
 	
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String mainlogin(Locale locale, Model model,HttpSession session) {
+		loginService.login(session);
 		return "login";
 	}
 	@RequestMapping(value = "/signin", method = RequestMethod.POST)
@@ -42,9 +43,20 @@ public class LoginController {
 		String move = loginService.logout(session);
 		return move;
 	}
+	@RequestMapping(value = "/writeinfo", method = RequestMethod.GET)
+	public String writeinfo(Model model,HttpSession session,String page) {
+		page = "writeinfo";
+		String move = loginService.sessionchk(session,page);
+		model.addAttribute("msg", "로그인 후 이용가능 합니다."); 
+		model.addAttribute("url", "login"); 
+		model.addAttribute("action", "get"); 
+		return "move";
+	}
+	
 	@RequestMapping(value = "/main", method = RequestMethod.GET)
-	public String main(Locale locale, Model model,HttpSession session) {
-		String move=loginService.sessionchk(session);;
+	public String main(Locale locale, Model model,HttpSession session,String page) {
+		page = "main";
+		String move=loginService.sessionchk(session,page);
 		model.addAttribute("msg", "로그인 후 이용가능 합니다."); 
 		model.addAttribute("url", "login"); 
 		model.addAttribute("action", "get"); 

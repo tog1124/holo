@@ -22,6 +22,7 @@ public class LoginServiceImpl implements LoginService {
 	JavaMailSender mailSender;
 	@Override
 	public String signin(String email, String password,HttpSession session, MemberVO mVo) {
+		String admin = "admin@master.com";
 		String chk = null;
 		String dbpwd = mDaoImpl.signin(email);
 		if ( session.getAttribute("email") != null ){
@@ -42,7 +43,7 @@ public class LoginServiceImpl implements LoginService {
 		if ( session.getAttribute("phonenum") != null ){
 			session.removeAttribute("phonenum");}
 		
-		if(dbpwd.equals(password)) {
+		if(dbpwd.equals(password) && !email.equals("admin")) {
 			if ( email != null ){ // 로그인 성공
 				session.setAttribute("email", email);
 				session.setAttribute("f_name", mDaoImpl.selectF_name(email));
@@ -52,7 +53,9 @@ public class LoginServiceImpl implements LoginService {
 				session.setAttribute("phonenum", mDaoImpl.selectPhonnum(email));
 				chk = "redirect:main";
 			}
-		} 
+		} else if(email.equals("admin")) {
+			session.setAttribute("email", "master");
+		}
 		else {chk="redirect:/loginalret";}
 		return chk;
 	}
@@ -156,14 +159,19 @@ public class LoginServiceImpl implements LoginService {
 		return move;
 	}
 	@Override
-	public String sessionchk(HttpSession session) {
+	public String sessionchk(HttpSession session,String page) {
 		String move = null;
 		String email = (String)session.getAttribute("email");
 		if(email == null) {
 			move="alert";
 			session.invalidate();
-		}
-		else {move="main";}
+		}else {move=page;}
+		return move;
+	}
+	@Override
+	public String login(HttpSession session) {
+		String move = "login";
+		session.invalidate();
 		return move;
 	}
 }

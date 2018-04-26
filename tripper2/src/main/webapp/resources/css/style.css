@@ -702,23 +702,24 @@ p {
     border: 1px solid #eeeeee;
     position: relative;
     padding: 75px 72px 60px;
-    margin: 55px 15px 0 15px;
+    margin: 110px 15px 0 15px;
 
 }
 
 .single_testimonial .testmonial_img {
     display: inline-block;
-    height: 110px;
+    height: 200px;
     left: 50%;
     position: absolute;
     top: 0;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
-    width: 110px;
+    width: 290px;
 }
 
 .single_testimonial .testmonial_img img {
     width: 100%;
+    height: 100%;
     border-radius: 50%;
 }
 

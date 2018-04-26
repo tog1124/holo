@@ -1,25 +1,33 @@
 <!doctype html>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
+<%@page import="java.sql.*"%>
 <html lang="en">
 <head>
-<meta charset="utf-8">
+<meta charset='utf-8' />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Pixel | Agency - Responsive Multipurpose HTML5 Template">
+<meta name="description"
+	content="Pixel | Agency - Responsive Multipurpose HTML5 Template">
 <meta name="keywords" content="Pixel">
 <meta name="author" content="rkwebdesigns">
 <!-- Site Title   -->
-<title>Solo Escape</title>
+<title>Tripper</title>
+<!-- Card script -->
+<link rel="stylesheet" type="text/css" href="css/cardstyle.css" />
 <!-- Fav Icons   -->
 <link rel="icon" href="resources/images/favicon.ico" type="image/x-icon">
 <!-- Bootstrap -->
 <link href="resources/css/bootstrap.min.css" rel="stylesheet">
-<link href="resources/css/bootstrap-dropdownhover.min.css" rel="stylesheet">
+<link href="resources/css/bootstrap-dropdownhover.min.css"
+	rel="stylesheet">
 <!-- Fonts Awesome -->
 <link href="resources/css/font-awesome.min.css" rel="stylesheet">
 <!-- Google Fonts -->
-<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,800italic,800,600italic,600,400italic,700,700italic' rel='stylesheet' type='text/css'>
+<link
+	href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,800italic,800,600italic,600,400italic,700,700italic'
+	rel='stylesheet' type='text/css'>
 <!-- animate Effect -->
 <link href="resources/css/animate.css" rel="stylesheet">
 <!-- OWL CSS -->
@@ -29,30 +37,20 @@
 <!-- Responsive CSS -->
 <link href="resources/css/responsive.css" rel="stylesheet">
 <!-- Skins Style-->
-<link rel="stylesheet" type="text/css" href="resources/css/skins/blue.css" title="blue" media="all" /> <!-- DEFAULT COLOR/ CURRENTLY USING -->
-<!-- <link rel="stylesheet" type="text/css" href="css/skins/pink.css" title="pink" media="all" /> -->
-<!-- <link rel="stylesheet" type="text/css" href="css/skins/purple.css" title="purple" media="all" /> -->
-<!-- <link rel="stylesheet" type="text/css" href="css/skins/green.css" title="green" media="all" /> -->
-<!-- <link rel="stylesheet" type="text/css" href="css/skins/red.css" title="red" media="all" /> -->
-<!-- <link rel="stylesheet" type="text/css" href="css/skins/yellow.css" title="yellow" media="all" /> -->
-<!-- <link rel="stylesheet" type="text/css" href="css/skins/orange.css" title="orange" media="all" /> -->
-<!-- <link rel="stylesheet" type="text/css" href="css/skins/grey.css" title="grey" media="all" /> -->
-
-<!--[if lt IE 9]>
-<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-<![endif]-->
+<link rel="stylesheet" type="text/css" href="resources/css/skins/blue.css" title="blue" media="all" />
+<link href="resources/css/search.css" rel="stylesheet">
 </head>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <body>
-<header id="header" class="head">
+	<header id="header" class="head">
 		<div class="top-header">
 			<div class="container">
 				<div class="row ">
 					<ul class="contact-detail2 col-sm-6 pull-left">
-						<li><a href="#" target="_blank"><i class="fa fa-mobile"></i>Call
-								+82 10-2977-1539</a></li>
+						<li><a href="#" target="_blank"><i class="fa fa-mobile"></i><%=session.getAttribute("phonenum") %></a></li>
 						<li><a href="#" target="_blank"><i
-								class="fa fa-envelope-o"></i> donghyun1538@gmail.com</a></li>
+								class="fa fa-envelope-o"></i> <%=session.getAttribute("email")%></a></li>
 					</ul>
 					<div class="social-links col-sm-6 pull-right">
 						<ul class="social-icons pull-right">
@@ -80,9 +78,9 @@
 							class="icon-bar"></span> <span class="icon-bar"></span> <span
 							class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="main.do">
+					<a class="navbar-brand" href="main">
 						<div class="logo-text">
-							<span><samp>SE</samp>Solo</span>ESCAPE
+							<span><samp>HT</samp>Holo</span>Tripper
 						</div>
 					</a>
 				</div>
@@ -90,16 +88,16 @@
 					id="bs-example-navbar-collapse-1" data-hover="dropdown"
 					data-animations="fadeIn">
 					<ul class="nav navbar-nav navbar-right">
-						<li><a href="main.do">Home</a></li>
+						<li><a href="main">Home</a></li>
 						<li><a href="other.do">See card </a></li>
 						<li><a href="services.jsp">Services </a></li>
 						<li class="dropdown active"><a href="#" class="dropdown-toggle"
-							data-toggle="dropdown" role="button" aria-expanded="false">Work
+					data-toggle="dropdown" role="button" aria-expanded="false">명소
 								<span class="caret"></span>
 						</a>
 							<ul class="dropdown-menu">
-								<li><a href="portfolio-3.jsp">3 colums</a></li>
-								<li><a href="portfolio-4.jsp">4 colums</a></li>
+								<li><a href="play">오락거리</a></li>
+								<li><a href="food">음식점</a></li>
 							</ul></li>
 						<li class="dropdown"><a href="#" class="dropdown-toggle"
 							data-toggle="dropdown" role="button" aria-expanded="false">Blog
@@ -114,10 +112,15 @@
 								<span class="caret"></span>
 						</a>
 							<ul class="dropdown-menu" role="menu">
-								<li><a href="write.do">내 정보 수정</a></li>
-								<li><a href="logout.do">로그아웃</a></li>
+								<li><a href="writeinfo">내 정보 수정</a></li>
+								<li><a href="findpassword">비밀번호 변경</a></li>
+								<li><a href="logout">로그아웃</a></li>
 							</ul></li>
-						<li><a href="contact.jsp">Contact Us</a></li>
+						  <li><div class="d5">
+                  <form action="searchPost" method="get">
+                     <input type="text" placeholder="검색어 입력">
+                  </form>
+               </div></li>
 					</ul>
 				</div>
 				<!--/.nav-collapse -->
@@ -128,16 +131,16 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6 col-lg-6">
-        <h2>Portfolio 3</h2>
+        <h2>음식점 찾기</h2>
       </div>
       <div class="col-md-6 col-lg-6">
         <div class="breadcrumbs">
           <ul>
             <li>Current Page:</li>
-            <li><a href="main.do">Home</a></li>
+            <li><a href="main">Home</a></li>
             <li><a href="#">Pages</a></li>
-            <li><a href="#">Portfolio</a></li>
-            <li><a href="portfolio-3.jsp">3 Colums</a></li>
+            <li><a href="#">명소</a></li>
+            <li><a href="food">음식점</a></li>
           </ul>
         </div>
       </div>
@@ -148,23 +151,20 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12 col-md-12">
-        <div class="portfolioFilter text-center"> 
-          <a href="#" data-filter="*" class="current">All Categories</a>/ 
-          <a href="#" data-filter=".people">Layout</a>/ 
-          <a href="#" data-filter=".places">HTML</a>/ 
-          <a href="#" data-filter=".food">Wordpress</a>/ 
-          <a href="#" data-filter=".objects">Responsive</a> 
-        </div>
+        <div class="portfolioFilter text-center"> <a href="#" data-filter="*" class="current">All Categories</a>/ <a href="#" data-filter=".people">Layout</a>/ <a href="#" data-filter=".places">HTML</a>/ <a href="#" data-filter=".food">Wordpress</a>/ <a href="#" data-filter=".objects">Responsive</a> </div>
         <div class="portfolioContainer">
-          <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 objects text-center"> <a class="magnific-popup" href="./resources/images/portfolio/1.jpg"><img src="images/portfolio/1.jpg" class="img-responsive wow zoomIn" alt="image"></a> </div>
-          <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 people places text-center"> <a class="magnific-popup" href="resources/images/portfolio/2.jpg"><img src="images/portfolio/2.jpg" class="img-responsive wow zoomIn" alt="image"></a> </div>
-          <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 food text-center"><a class="magnific-popup" href="resources/images/portfolio/3.jpg"> <img src="images/portfolio/3.jpg" alt="image" class="img-responsive wow zoomIn"></a> </div>
-          <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 people places text-center"><a class="magnific-popup" href="resources/images/portfolio/4.jpg"> <img src="images/portfolio/4.jpg" alt="image" class="img-responsive wow zoomIn"></a> </div>
-          <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 places objects text-center"><a class="magnific-popup" href="resources/images/portfolio/5.jpg"> <img src="images/portfolio/5.jpg" alt="image" class="img-responsive wow zoomIn"></a> </div>
-          <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 people food objects text-center"><a class="magnific-popup" href="resources/images/portfolio/6.jpg"> <img src="images/portfolio/6.jpg" alt="image" class="img-responsive wow zoomIn"></a> </div>
-          <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 food objects text-center"><a class="magnific-popup" href="resources/images/portfolio/7.jpg"> <img src="images/portfolio/7.jpg" alt="image" class="img-responsive wow zoomIn"></a> </div>
-          <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 food text-center"><a class="magnific-popup" href="resources/images/portfolio/8.jpg"> <img src="images/portfolio/8.jpg" alt="image" class="img-responsive wow zoomIn"></a> </div>
-          <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 people food objects text-center"><a class="magnific-popup" href="resources/images/portfolio/9.jpg"> <img src="images/portfolio/9.jpg" alt="image" class="img-responsive wow zoomIn"></a> </div>
+          <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12 objects text-center"> <a class="magnific-popup" href="resources/images/portfolio/1.jpg"><img src="images/portfolio/1.jpg" class="img-responsive wow zoomIn" alt="image"></a> </div>
+          <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12 people places text-center"> <a class="magnific-popup" href="resources/images/portfolio/2.jpg"><img src="images/portfolio/2.jpg" class="img-responsive wow zoomIn" alt="image"></a> </div>
+          <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12 food text-center"><a class="magnific-popup" href="resources/images/portfolio/3.jpg"> <img src="images/portfolio/3.jpg" alt="image" class="img-responsive wow zoomIn"></a> </div>
+          <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12 people places text-center"><a class="magnific-popup" href="resources/images/portfolio/4.jpg"> <img src="images/portfolio/4.jpg" alt="image" class="img-responsive wow zoomIn"></a> </div>
+          <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12 places objects text-center"><a class="magnific-popup" href="resources/images/portfolio/5.jpg"> <img src="images/portfolio/5.jpg" alt="image" class="img-responsive wow zoomIn"></a> </div>
+          <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12 people food objects text-center"><a class="magnific-popup" href="resources/images/portfolio/6.jpg"> <img src="images/portfolio/6.jpg" alt="image" class="img-responsive wow zoomIn"></a> </div>
+          <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12 food objects text-center"><a class="magnific-popup" href="resources/images/portfolio/7.jpg"> <img src="images/portfolio/7.jpg" alt="image" class="img-responsive wow zoomIn"></a> </div>
+          <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12 food text-center"><a class="magnific-popup" href="resources/images/portfolio/8.jpg"> <img src="images/portfolio/8.jpg" alt="image" class="img-responsive wow zoomIn"></a> </div>
+          <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12 people food objects text-center"><a class="magnific-popup" href="resources/images/portfolio/9.jpg"> <img src="images/portfolio/9.jpg" alt="image" class="img-responsive wow zoomIn"></a> </div>
+          <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12 food objects text-center"><a class="magnific-popup" href="resources/images/portfolio/1.jpg"> <img src="images/portfolio/1.jpg" alt="image" class="img-responsive wow zoomIn"></a> </div>
+          <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12 food text-center"><a class="magnific-popup" href="resources/images/portfolio/2.jpg"> <img src="images/portfolio/2.jpg" alt="image" class="img-responsive wow zoomIn"></a> </div>
+          <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12 people food objects text-center"><a class="magnific-popup" href="resources/images/portfolio/3.jpg"> <img src="images/portfolio/3.jpg" alt="image" class="img-responsive wow zoomIn"></a> </div>
         </div>
       </div>
     </div>

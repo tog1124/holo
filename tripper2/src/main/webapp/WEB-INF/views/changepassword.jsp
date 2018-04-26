@@ -13,7 +13,7 @@
 <meta name="author" content="rkwebdesigns">
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> 
-<title>SOLO Escape</title>
+<title>Tripper</title>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/loginmainstyle.css" />
 <!-- Fav Icons   -->
 <link rel="icon" href="${pageContext.request.contextPath}/resources/images/favicon.ico" type="image/x-icon">
